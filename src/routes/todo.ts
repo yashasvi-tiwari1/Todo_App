@@ -1,4 +1,4 @@
-import express, {Request, response, Response} from "express";
+import express, {Request, Response} from "express";
 import {Todo} from "../models/todo";
 
 const router = express.Router()
@@ -42,7 +42,7 @@ router.delete('/:id', (req,res)=>{
 
 router.put('/:id',(req,res)=>{
     let todo = Todo.findByIdAndUpdate(req.params.id,req.body,
-        (err:any,book:any)=>{
+        (err:any,todo:any)=>{
         if(err){
             res.send(err);
         }
